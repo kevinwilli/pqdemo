@@ -2,6 +2,7 @@ package edu.guilford;
 
 import java.util.PriorityQueue;
 import java.util.Stack;
+import java.util.TreeSet;
 
 public class PQDemo 
 {
@@ -39,6 +40,27 @@ public class PQDemo
         }
         System.out.println("Is the stack empty? "+ s.isEmpty());
         System.out.println("Is the priority queue empty? "+ pq.isEmpty());
+
+        //instantiate a treeSet of FullNames objects
+        TreeSet<FullName> nameSet = new TreeSet<FullName>();
+
+        //add 20 fullnames to the stack
+        for(int i = 0; i< 20; i++){
+            s.add(new FullName());
+        }
+        System.out.println("Here's the new stack of FullNames: ");
+        System.out.println(s);
+
+        //add the element of the stack to the treeSet
+        while (!s.isEmpty()){
+            //popping an element off the stack returns that element and removes it from the stack
+
+            nameSet.add(s.pop());
+        }
+        //print out the treeSet
+        System.out.println("Here's the treeSet of FullNames: ");
+        System.out.println(nameSet);
+        System.out.println("The size of the treeSet is: "+ nameSet.size());
 
     }
 }
